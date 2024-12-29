@@ -5,12 +5,13 @@ import { sanityFetch, SanityLive } from '@/sanity/lib/live'
 import { STARTUPS_QUERY } from '@/sanity/lib/queries'
 import React from 'react'
 
-const  Home = async ({ searchParams} : { searchParams : Promise<{query : string}>}) => {
+const Home = async ( {searchParams} : {searchParams : Promise<{query:string}>}) =>{
+
 
   const query = (await searchParams).query
+  const params = {search : query || null}
 
-
-  const {data:posts} = await sanityFetch({query : STARTUPS_QUERY})
+  const {data:posts} = await sanityFetch({query : STARTUPS_QUERY , params})
 
 
 

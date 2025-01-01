@@ -11,7 +11,7 @@ export const projectId = assertValue(
   'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID'
 )
 
-
+// Ensure the token is imported and used in the write client configuration.
 export const token = process.env.SANITY_WRITE_TOKEN
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {

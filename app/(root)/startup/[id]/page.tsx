@@ -16,7 +16,6 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
     const md = markdownit()
     const post = await client.fetch(StARTUP_BY_ID_QUERY, { id })
 
-    console.log(post)
     const parsedContent = md.render(post?.pitch || '')
     if(!post) return notFound()
 

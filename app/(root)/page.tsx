@@ -1,3 +1,4 @@
+import { auth } from '@/auth'
 import SearchForm from '@/components/SearchForm'
 import StartupCard from '@/components/StartupCard'
 import { client } from '@/sanity/lib/client'
@@ -11,12 +12,14 @@ const Home = async ( {searchParams} : {searchParams : Promise<{query:string}>}) 
   const query = (await searchParams).query
   const params = {search : query || null}
 
+  const session = await auth()
+  console.log("zevi " + session?.id)
+
   const {data:posts} = await sanityFetch({query : STARTUPS_QUERY , params})
 
 
 
   // const posts = await client.fetch(STARTUPS_QUERY);
-  console.log(posts)
 
 //   const posts = [
 //     {

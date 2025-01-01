@@ -8,6 +8,8 @@ import React, { Suspense } from 'react'
 import markdownit from 'markdown-it'
 import { Skeleton } from '@/components/ui/skeleton'
 import View from '@/components/View'
+import { Avatar } from '@radix-ui/react-avatar'
+import { AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
@@ -35,10 +37,16 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 <div className='space-y--5 mt-10 max-w-4xl mx-auto'>
                     <div className="flex-between gap-5">
                         <Link href={`/user/${post.author?._id}`} className='flex gap-2 items-center mb-3'>
-                            <Image src={post.author.image} alt='avatar' className='rounded-full drop-shadow-lg' width={64} height={64} />
+                            <Avatar>
+                                <AvatarImage src={post?.author?.image || "https://github.com/shadcn.png"} alt={post?.author?.name} className='rounded-full w-16 h-16' />
+                                <AvatarFallback>{post?.author?.name}</AvatarFallback>
+                            </Avatar>
+
+                            
+
                             <div>
-                                <p className='text-20-medium'>{post.author.name}</p>
-                                <p className='text-16-medium !text-black-300'>@{post.author.username}</p>
+                                <p className='text-20-medium'>{post.author?.name}</p>
+                                <p className='text-16-medium !text-black-300'>@{post.author?.username}</p>
                             </div>
                         </Link>
                         <p className='category-tag'>{post.category}</p>

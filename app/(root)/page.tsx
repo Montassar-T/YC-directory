@@ -13,7 +13,7 @@ const Home = async ( {searchParams} : {searchParams : Promise<{query:string}>}) 
   const params = {search : query || null}
 
   const session = await auth()
-  console.log("zevi " + session?.id)
+  console.log(session?.id)
 
   const {data:posts} = await sanityFetch({query : STARTUPS_QUERY , params})
 

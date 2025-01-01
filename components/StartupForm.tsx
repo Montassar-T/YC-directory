@@ -18,8 +18,11 @@ const StartupForm = () => {
   const { toast } = useToast();
   const router = useRouter();
 
+
+  
   const handleFormSubmit = async (prevState: any, formData: FormData) => {
     try {
+      
       const formValues = {
         title: formData.get("title") as string,
         description: formData.get("description") as string,
@@ -45,7 +48,7 @@ const StartupForm = () => {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErorrs = error.flatten().fieldErrors;
-
+        console.log(fieldErorrs)
         setErrors(fieldErorrs as unknown as Record<string, string>);
 
         toast({

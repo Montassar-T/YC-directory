@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 // import { Author, Startup } from "@/sanity/types";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Avatar, AvatarFallback } from "@radix-ui/react-avatar";
+import { AvatarImage } from "./ui/avatar";
 
 // export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
 
@@ -40,13 +42,13 @@ const StartupCard = ({ post }: { post: any }) => {
           </Link>
         </div>
         <Link href={`/user/${author?._id}`}>
-          <Image
-            src={author?.image}
-            alt={author?.name!}
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
+
+        
+        <Avatar >
+          <AvatarImage src={author?.image || "https://github.com/shadcn.png"} alt={author?.name!}  className="rounded-full w-12 h-12" width={48} height={48} />
+          <AvatarFallback>{author?.name}</AvatarFallback>
+        </Avatar>
+         
         </Link>
       </div>
 

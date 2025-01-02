@@ -1,4 +1,19 @@
 
+<div align="center">
+  <a href="https://nextjs.org" target="_blank" style="text-decoration:none;">
+    <img alt="Next.js" src="https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white&style=for-the-badge" />
+  </a>
+  <a href="https://tailwindcss.com" target="_blank" style="text-decoration:none;">
+    <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind%20CSS-38B2AC?logo=tailwindcss&logoColor=white&style=for-the-badge" />
+  </a>
+  <a href="https://sanity.io" target="_blank" style="text-decoration:none;">
+    <img alt="Sanity" src="https://img.shields.io/badge/Sanity-FF4747?logo=sanity&logoColor=white&style=for-the-badge" />
+  </a>
+  <a href="https://typescriptlang.org" target="_blank" style="text-decoration:none;">
+    <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge" />
+  </a>
+</div>
+
 # YC Directory - Startup Pitch Platform
 
 YC Directory is a platform where entrepreneurs can submit their startup ideas for virtual pitch competitions, browse other pitches, and gain exposure through a clean, minimalistic design for a smooth user experience. Powered by React 19, Next.js 15, Sanity, and TailwindCSS, it offers a seamless and dynamic way to engage with startup pitches.

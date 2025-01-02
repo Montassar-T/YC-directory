@@ -2,10 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { auth, signOut, signIn } from "@/auth";
 import { BadgePlus, LogOut } from "lucide-react";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar = async () => {
   const session = await auth();
+
+  const userName = session?.user?.name;
 
   return (
     <header className="px-5 py-3 bg-white shadow-sm font-work-sans">
@@ -19,7 +21,7 @@ const Navbar = async () => {
             <>
               <Link href="/startup/create">
                 <span className="max-sm:hidden">Create</span>
-                {/* <BadgePlus className="size-6 sm:hidden" /> */}
+                <BadgePlus className="size-6 sm:hidden" />
               </Link>
 
               <form
@@ -35,16 +37,14 @@ const Navbar = async () => {
                 </button>
               </form>
 
-              <Link href={`/user/${session?.user?.id}`}>
-
-              {session?.user?.name}
-                {/* <Avatar className="size-10">
+              <Link href={`/user/${session?.id}`}>
+                <Avatar className="size-10">
                   <AvatarImage
                     src={session?.user?.image || ""}
                     alt={session?.user?.name || ""}
                   />
-                  <AvatarFallback>AV</AvatarFallback>
-                </Avatar> */}
+                  <AvatarFallback>{userName?.slice(0, 2).toUpperCase()}</AvatarFallback>
+                </Avatar>
               </Link>
             </>
           ) : (

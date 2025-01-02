@@ -1,7 +1,7 @@
 YC Directory - Startup Pitch Platform
 YC Directory is a platform where entrepreneurs can submit their startup ideas for virtual pitch competitions, browse other pitches, and gain exposure through a clean, minimalistic design for a smooth user experience. Powered by React 19, Next.js 15, Sanity, and TailwindCSS, it offers a seamless and dynamic way to engage with startup pitches.
 
-⚙️ Tech Stack
+##⚙️ Tech Stack
 React 19 – A powerful front-end library for building modern user interfaces.
 Next.js 15 – A full-stack React framework for building production-grade applications.
 Sanity – A headless CMS for dynamic content management.
